@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TopBanner ref="top"></TopBanner>
+    <container ref="content"></container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TopBanner from "./components/Topbanner";
+import Container from "./components/Container";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Container: Container,
+    TopBanner: TopBanner,
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  overflow: hidden;
 }
 </style>
