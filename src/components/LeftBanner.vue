@@ -71,7 +71,7 @@
 
 <style scoped>
 #leftBar {
-    background-color: #feffdb;
+    background-color: lightgrey;
     height: 100%;
     width: 200px;
     position: absolute;

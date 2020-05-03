@@ -32,7 +32,7 @@
         <p class="text">
             Selecting the kowhai symbol <a href="http://NZFlora.landcareresearch.co.nz/default.aspx?NameID=Landcareresearch.co.nz/PS1/NK/224554"
                                            target="_blank">
-            <img src="#" alt="Nga Tipu record" width="18" height="19"
+            <img src="../../public/symbol.jpg" alt="Nga Tipu record" width="18" height="19"
                  border="0"></a>&nbsp;&nbsp;beside a botanical name will link you to the
             Ng&#257; Tipu o Aotearoa, New Zealand Plants database, where you will find authoritative
             taxonomic information on the plant.</p>

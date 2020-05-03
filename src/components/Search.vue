@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-bind:id="searchContent">
         <b-form @submit="onSubmit" @reset="onReset" v-if="showContent.from" id="searchForm">
             <b-form-group  id="searchTypeGroup"
                           label="Search Advanced">
@@ -80,8 +80,10 @@
                         text-field="name"
                 ></b-form-radio-group>
             </b-form-group>
-            <b-button type="submit" variant="primary">Submit</b-button>
-            <b-button type="reset" variant="danger">Reset</b-button>
+            <b-form-group>
+                <b-button type="submit" variant="primary">Submit</b-button>
+                <b-button type="reset" variant="danger">Reset</b-button>
+            </b-form-group>
         </b-form>
     </div>
 </template>
@@ -92,6 +94,7 @@
         name: "Search",
         data() {
             return {
+                searchContent : 'searchContent',
                 searchForm : {
                     searchType : '1',
                     searchScope : '1',
@@ -234,8 +237,15 @@
     left: 60px;
     top: 40px;
     width: 70% ;
+    min-height: 520px;
     max-width: 700px;
     text-align: left;
     position: relative;
+}
+#searchContent {
+    height: 100%;
+    width: inherit;
+    position: relative;
+    background-color: whitesmoke;
 }
 </style>

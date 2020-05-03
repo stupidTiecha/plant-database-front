@@ -6,7 +6,8 @@
                     <a href="#"><img :src="logoPath" alt="这里是logo图片"></a>
                 </div>
                 <div v-bind:id="logoDescription">
-                    <p>{{description}}</p>
+                    <p style="display: inline-block ;
+                    background-color: #C0BDAA;height: 30px; font-size: larger;line-height: 30px;margin-left: 8px ; min-width: 176px;text-align: center">&nbsp;{{description}}&nbsp;</p>
                 </div>
             </div>
 
@@ -35,10 +36,12 @@
                 bottomBar : 'bottomBar',
                 logoPic : 'logoPic',
                 logoDescription : 'logoDescription',
-                logoPath : '这里是logo图片路径',
-                description : '这里是logo下介绍',
+                //这里是logo图片路径
+                logoPath : require('../../public/logo.png'),
+                //这里是logo下的介绍
+                description : 'Māori Plant Use',
                 //这里是头部浮动的图片地址，可以添加多个
-                floatPics : ['2','3','4'],
+                floatPics : [require('../../public/plant001.jpg'),require('../../public/plant002.jpg'),require('../../public/plant003.jpg')],
                 //这里横条选择,添加时按照格式即可
                 selectBars : {
                     DATABASE : {
@@ -69,7 +72,7 @@
 
 <style scoped>
 #default {
-    background-color: antiquewhite;
+    background-color: #C0BDAA;
 }
 
 #red,#default {
@@ -81,7 +84,7 @@
 #upperBar {
     height: 110px;
     width: inherit;
-    background-color: cadetblue;
+    background-color:  #C0BDAA;
     position: absolute;
     overflow: hidden;
 }
@@ -90,7 +93,7 @@
     float: left;
     height: 110px;
     width: 350px;
-    background-color: aquamarine;
+    background-color: inherit;
 }
 #logoDescription {
     float: top;
@@ -99,7 +102,6 @@
     font-size: larger;
     text-align: left;
     position: relative;
-    background-color: burlywood;
 }
 #logoDescription p {
     line-height: 35px;
@@ -127,7 +129,7 @@
 #bottomBar {
     width: inherit;
     height: 30px;
-    background-color: darkcyan;
+    background-color: #9f9072;
     margin-top: 110px;
     overflow: hidden;
 }
@@ -147,7 +149,7 @@
     margin-left: 10px;
 }
 #bottomBar a:link,a:hover,a:visited,a:active {
-    color: wheat;
+    color: #FFFFFF;
 }
 #bottomBar a:hover {
     text-decoration: none;

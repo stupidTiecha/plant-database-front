@@ -30,7 +30,7 @@
                     let el = this.$el;
                     let height = window.innerHeight - 140;
                     let width = window.innerWidth - 200;
-                    let autoHeight = height <= 400 ? 400 : height;
+                    let autoHeight = height <= 500 ? 500 : height;
                     let autoWidth = width <= 500 ? 500 : width;
                     // console.log(childHeight,autoHeight);
                     if (childHeight >= autoHeight) {
@@ -75,7 +75,7 @@
 #detailWindow{
     height: 100%;
     left: 200px;
-    background-color: whitesmoke;
+    background-color: #DFDEC9;
     position: relative ;
     text-align: center;
 }
