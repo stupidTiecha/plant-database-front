@@ -19,6 +19,7 @@
             <a v-for="(select,key,slot) in selectBars" :key="key" href="#" v-on:click="goOut(select.href)">
                 <span v-if="slot !== 0"> | </span>{{key}}
             </a>
+            <a href ="#" v-on:click ="login" style="float: right">Log in</a>
         </div>
     </div>
 </template>
@@ -64,6 +65,9 @@
                 } else if (url !== '' && url !== undefined) {
                     window.open(url) ;
                 }
+            },
+            login : function () {
+                this.$parent.$refs.loginFrame.loginFrame = 'login';
             }
         }
     }
