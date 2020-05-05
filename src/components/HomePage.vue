@@ -1,14 +1,26 @@
 <template>
     <div>
         <div v-bind:id="homeContent">
-            <img src="../../public/home-page-pic.jpg"
+            <img src="../../public/home-page-pic.png"
                  alt="homePage-pic"
                  style="position: absolute; right: 0;left: 0">
             <div v-bind:id="note">
-                <p style="line-height: 40px; font-size: 26px;letter-spacing:3px; text-align: left">
+                <p style="line-height: 40px;
+                color: #f2f2f4;
+                font-size: 26px;
+                letter-spacing:3px;
+                text-align: left">
                     Māori Plant Use
                 </p>
-                <p style="width: 260px ; display: inline-block; text-align: left ;margin-top: 170px;margin-left: 10px ;letter-spacing:-1px; font-weight: 400; line-height: 18px" >
+                <p style="width: 260px ;
+                color:#f2f2f4;
+                display: inline-block;
+                text-align: left ;
+                margin-top: 170px;
+                margin-left: 10px ;
+                letter-spacing:-1px;
+                font-weight: 400;
+                line-height: 18px" >
                     Easy access to detailed information on Māori traditional uses of New Zealand native plants
                 </p>
             </div>
@@ -34,7 +46,7 @@
     left : 30px;
     height: 400px;
     width: 650px;
-    background-color: #feffdb;
+    background-color: #161626;
     display: inline-block;
     position: relative;
 }

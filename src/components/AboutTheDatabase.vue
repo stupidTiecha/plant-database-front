@@ -135,16 +135,25 @@
 #aboutTheDatabase {
     border-right-style: solid;
     border-right-width: 90px;
-    border-right-color: #FFF;
+    border-right-color: #161626;
     border-left-style: solid;
     border-left-width: 30px;
-    border-left-color: #FFF;
+    border-left-color: #161626;
     border-bottom-style: solid;
     border-bottom-width: 30px;
-    border-bottom-color: #FFF;
+    border-bottom-color: #161626;
     width: 100%;
     height: auto;
-    background-color: #FFF;
-    text-align: left
+    background-color: #161626;
+    text-align: left;
+    color: #f2f2f4;
+}
+
+#aboutTheDatabase >>> a:link,a:hover,a:visited,a:active {
+    color: #1ebad6;
+}
+
+#aboutTheDatabase >>> a:hover {
+    color:  #c0c0c8;
 }
 </style>

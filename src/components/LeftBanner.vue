@@ -71,25 +71,26 @@
 
 <style scoped>
 #leftBar {
-    background-color: lightgrey;
+    background-color: #3b3a4a;
     height: 100%;
     width: 200px;
     position: absolute;
     overflow: hidden;
 }
 #menuList {
-    top: 60px;
+    /*top: 50%;*/
     height: 100%;
-    float: top;
+    /*float: top;*/
     overflow: hidden;
     position: relative;
+    text-align: center;
 }
-#menuList li a{
-    float: left;
-}
+/*#menuList li a{*/
+/*    float: left;*/
+/*}*/
 
 #menuList li a:link,a:hover,a:visited,a:active {
-    color: #9f9072;
+    color: #f2f2f4;
     font-weight: bold ;
     text-decoration: none;
 }
@@ -108,6 +109,6 @@
     list-style-type: none;
 }
 #menuList li:hover {
-    background-color: #c8cbc6;
+    background-color: #1ebad6;
 }
 </style>

@@ -7,7 +7,14 @@
                 </div>
                 <div v-bind:id="logoDescription">
                     <p style="display: inline-block ;
-                    background-color: #C0BDAA;height: 30px; font-size: larger;line-height: 30px;margin-left: 8px ; min-width: 176px;text-align: center">&nbsp;{{description}}&nbsp;</p>
+                    background-color: #161626;
+                    height: 30px;
+                    font-size: larger;
+                    line-height: 30px;
+                    margin-left: 8px ;
+                    min-width: 176px;
+                    color: #f2f2f4;
+                    text-align: center">&nbsp;{{description}}&nbsp;</p>
                 </div>
             </div>
 
@@ -38,7 +45,7 @@
                 logoPic : 'logoPic',
                 logoDescription : 'logoDescription',
                 //这里是logo图片路径
-                logoPath : require('../../public/logo.png'),
+                logoPath : require('../../public/logo-1.png'),
                 //这里是logo下的介绍
                 description : 'Māori Plant Use',
                 //这里是头部浮动的图片地址，可以添加多个
@@ -88,7 +95,7 @@
 #upperBar {
     height: 110px;
     width: inherit;
-    background-color:  #C0BDAA;
+    background-color:  #161626;
     position: absolute;
     overflow: hidden;
 }
@@ -133,7 +140,7 @@
 #bottomBar {
     width: inherit;
     height: 30px;
-    background-color: #9f9072;
+    background-color: #c0c0c8;
     margin-top: 110px;
     overflow: hidden;
 }
@@ -153,7 +160,7 @@
     margin-left: 10px;
 }
 #bottomBar a:link,a:hover,a:visited,a:active {
-    color: #FFFFFF;
+    color: #161626;
 }
 #bottomBar a:hover {
     text-decoration: none;

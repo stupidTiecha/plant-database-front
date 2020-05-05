@@ -1,6 +1,6 @@
 <template>
     <div v-bind:id="container" v-bind:style="{height : containerHeight}">
-        <left-banner></left-banner>
+        <left-banner ref="leftBanner"></left-banner>
         <detail-window v-bind:id="detailWindow" v-bind:style="{width : detailWidth}" ref="detail"></detail-window>
     </div>
 </template>
@@ -25,20 +25,23 @@
             // 等待50毫秒是因为点击左侧栏后，执行过快，无法获取到正确的size
             resize : function () {
                 this.sleep(50).then(() => {
-                    let childEl = this.$refs.detail.$refs.childWindow.$el;
-                    let childHeight = childEl.clientHeight;
+                    let detail = this.$refs.detail.$refs.childWindow.$el;
+                    let leftBanner = this.$refs.leftBanner.$el.firstChild;
+                    let detailHeight = detail.clientHeight;
                     let el = this.$el;
+                    let leftBannerTop = (window.innerHeight - 140 ) / 2 - 75;
                     let height = window.innerHeight - 140;
                     let width = window.innerWidth - 200;
                     let autoHeight = height <= 500 ? 500 : height;
                     let autoWidth = width <= 500 ? 500 : width;
-                    // console.log(childHeight,autoHeight);
-                    if (childHeight >= autoHeight) {
-                        autoHeight = childHeight ;
+                    // console.log(detailHeight,autoHeight);
+                    if (detailHeight >= autoHeight) {
+                        autoHeight = detailHeight ;
                     }
                     el.setAttribute('style','height : ' + autoHeight + 'px');
                     el.lastElementChild.setAttribute('style', 'width : ' + autoWidth + 'px');
-                    childEl.setAttribute('style', 'width : ' + autoWidth + 'px');
+                    detail.setAttribute('style', 'width : ' + autoWidth + 'px');
+                    leftBanner.setAttribute('style','top : ' + leftBannerTop + 'px');
                 })
 
             },
@@ -75,7 +78,7 @@
 #detailWindow{
     height: 100%;
     left: 200px;
-    background-color: #DFDEC9;
+    background-color: #161626;
     position: relative ;
     text-align: center;
 }
