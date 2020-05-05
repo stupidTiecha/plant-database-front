@@ -5,6 +5,11 @@
                 <a href="#">{{menu.description}}</a><b-icon :icon="menu.icon" style="float: right ; margin-right: 5px ;margin-top: 9px"></b-icon>
             </li>
         </div>
+        <div id="contactUs">
+            <p><span style="font-weight: bold">Phone :</span> +27 21 461 9265<br/>
+                <span style="font-weight: bold">Email : </span><span style="color: darkolivegreen">info@greenpop.org</span><br/>
+                <span style="font-weight: bold">Business Hours: </span> 8:00am - 5:00pm, Monday to Friday </p>
+        </div>
     </div>
 </template>
 
@@ -110,5 +115,14 @@
 }
 #menuList li:hover {
     background-color: #1ebad6;
+}
+#contactUs {
+    color: #f2f2f4;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    z-index: 999;
+    line-height: 25px;
+
 }
 </style>

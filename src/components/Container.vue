@@ -27,11 +27,13 @@
                 this.sleep(50).then(() => {
                     let detail = this.$refs.detail.$refs.childWindow.$el;
                     let leftBanner = this.$refs.leftBanner.$el.firstChild;
+                    let contanctUs = this.$refs.leftBanner.$el.lastChild;
                     let detailHeight = detail.clientHeight;
                     let el = this.$el;
                     let leftBannerTop = (window.innerHeight - 140 ) / 2 - 75;
                     let height = window.innerHeight - 140;
                     let width = window.innerWidth - 200;
+                    let contactUsHeight = window.innerHeight - 140  <= 500? detailHeight : window.innerHeight - 245;
                     let autoHeight = height <= 500 ? 500 : height;
                     let autoWidth = width <= 500 ? 500 : width;
                     // console.log(detailHeight,autoHeight);
@@ -42,6 +44,7 @@
                     el.lastElementChild.setAttribute('style', 'width : ' + autoWidth + 'px');
                     detail.setAttribute('style', 'width : ' + autoWidth + 'px');
                     leftBanner.setAttribute('style','top : ' + leftBannerTop + 'px');
+                    contanctUs.setAttribute('style','top : ' + contactUsHeight + 'px');
                 })
 
             },

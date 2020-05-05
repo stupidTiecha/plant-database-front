@@ -45,7 +45,7 @@
                         placeholder="Enter your Username"
                         trim
                 ></b-form-input>
-                <b-form-text id="input-username-help" style="letter-spacing:0; font-weight: 200; line-height: 16px; font-size: xx-small">
+                <b-form-text id="input-username-help" style="letter-spacing:0; font-weight: 200; line-height: 16px; font-size: xx-small;color: #161626">
                     · username can be letters and numbers in 4-12 characters
                 </b-form-text>
 
@@ -61,7 +61,7 @@
                                 type="password"
                                 trim
                         ></b-form-input>
-                        <b-form-text id="input-password-help" style="letter-spacing:0; font-weight: 200; line-height: 16px; font-size: xx-small">
+                        <b-form-text id="input-password-help" style="letter-spacing:0; font-weight: 200; line-height: 16px; font-size: xx-small;color: #161626">
                             · password length should be 8~16 <br/>
                             · must contain letters (upper or lower case)<br/>
                             · must contain numbers <br/>
@@ -266,6 +266,14 @@
 
 #register, #login {
     -webkit-animation: fadeIn .4s  linear;
+    background-color: #c0c0c8;
+    color: #161626;
+}
+#login ,#register >>> a:link,a:hover,a:visited,a:active {
+    color:  #f2f2f4;
+}
+#login ,#register >>> span {
+    color: #161626;
 }
 
 </style>
