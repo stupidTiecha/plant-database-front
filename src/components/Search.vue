@@ -241,11 +241,12 @@
     max-width: 700px;
     text-align: left;
     position: relative;
+    color: #f2f2f4;
 }
 #searchContent {
     height: 100%;
     width: inherit;
     position: relative;
-    background-color: whitesmoke;
+    background-color: #161626 ;
 }
 </style>
