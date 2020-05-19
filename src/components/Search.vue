@@ -234,19 +234,19 @@
 
 <style scoped>
 #searchForm {
-    left: 60px;
+    left: 200px;
     top: 40px;
     width: 70% ;
     min-height: 520px;
     max-width: 700px;
     text-align: left;
     position: relative;
-    color: #f2f2f4;
+    color: black;
 }
 #searchContent {
     height: 100%;
     width: inherit;
     position: relative;
-    background-color: #161626 ;
+    background-color: whitesmoke ;
 }
 </style>

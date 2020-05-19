@@ -1,6 +1,6 @@
 <template>
     <div v-bind:id="container" v-bind:style="{height : containerHeight}">
-        <left-banner ref="leftBanner"></left-banner>
+<!--        <left-banner ref="leftBanner"></left-banner>-->
         <detail-window v-bind:id="detailWindow" v-bind:style="{width : detailWidth}" ref="detail"></detail-window>
     </div>
 </template>
@@ -11,13 +11,13 @@
 
     export default {
         name: "Container",
-        components: {DetailWindow, LeftBanner},
+        components: {DetailWindow},
         data () {
             return {
                 container : 'container',
                 detailWindow : 'detailWindow',
                 containerHeight : ((window.innerHeight - 140) <= 400 ? 400 : (window.innerHeight - 140)) + 'px',
-                detailWidth : ((window.innerWidth - 217) <= 500 ? 500 :(window.innerWidth - 200)) + 'px',
+                detailWidth : (window.innerWidth  <= 500 ? 500 :window.innerWidth) + 'px',
             }
         },
         methods : {
@@ -26,14 +26,14 @@
             resize : function () {
                 this.sleep(50).then(() => {
                     let detail = this.$refs.detail.$refs.childWindow.$el;
-                    let leftBanner = this.$refs.leftBanner.$el.firstChild;
-                    let contactUs = this.$refs.leftBanner.$el.lastChild;
+                    // let leftBanner = this.$refs.leftBanner.$el.firstChild;
+                    // let contactUs = this.$refs.leftBanner.$el.lastChild;
                     let detailHeight = detail.clientHeight;
                     let el = this.$el;
-                    let leftBannerTop = (window.innerHeight - 140 ) / 2 - 75;
+                    // let leftBannerTop = (window.innerHeight - 140 ) / 2 - 75;
                     let height = window.innerHeight - 140;
-                    let width = window.innerWidth - 200;
-                    let contactUsHeight = window.innerHeight - 140  <= 500? detailHeight : window.innerHeight - 245;
+                    let width = window.innerWidth;
+                    // let contactUsHeight = window.innerHeight - 140  <= 500? detailHeight : window.innerHeight - 245;
                     let autoHeight = height <= 500 ? 500 : height;
                     let autoWidth = width <= 500 ? 500 : width;
                     // console.log(detailHeight,autoHeight);
@@ -43,8 +43,8 @@
                     el.setAttribute('style','height : ' + autoHeight + 'px');
                     el.lastElementChild.setAttribute('style', 'width : ' + autoWidth + 'px');
                     detail.setAttribute('style', 'width : ' + autoWidth + 'px');
-                    leftBanner.setAttribute('style','top : ' + leftBannerTop + 'px');
-                    contactUs.setAttribute('style','top : ' + contactUsHeight + 'px');
+                    // leftBanner.setAttribute('style','top : ' + leftBannerTop + 'px');
+                    // contactUs.setAttribute('style','top : ' + contactUsHeight + 'px');
                 })
 
             },
@@ -80,8 +80,8 @@
 }
 #detailWindow{
     height: 100%;
-    left: 200px;
-    background-color: #161626;
+    /*left: 200px;*/
+    background-color: whitesmoke;
     position: relative ;
     text-align: center;
 }

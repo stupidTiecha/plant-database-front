@@ -6,14 +6,14 @@
                  style="position: absolute; right: 0;left: 0">
             <div v-bind:id="note">
                 <p style="line-height: 40px;
-                color: #f2f2f4;
+                color: black;
                 font-size: 26px;
                 letter-spacing:3px;
                 text-align: left">
                     Māori Plant Use
                 </p>
                 <p style="width: 260px ;
-                color:#f2f2f4;
+                color:black;
                 display: inline-block;
                 text-align: left ;
                 margin-top: 170px;
@@ -42,11 +42,10 @@
 
 <style scoped>
 #homeContent{
-    top : 30px;
+    top : 60px;
     left : 30px;
     height: 400px;
     width: 650px;
-    background-color: #161626;
     display: inline-block;
     position: relative;
 }

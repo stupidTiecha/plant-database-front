@@ -122,6 +122,8 @@
         <p class="text">
             &nbsp;
         </p>
+        <br/>
+        <br/>
     </div>
 </template>
 
@@ -135,18 +137,18 @@
 #aboutTheDatabase {
     border-right-style: solid;
     border-right-width: 90px;
-    border-right-color: #161626;
+    border-right-color: whitesmoke;
     border-left-style: solid;
-    border-left-width: 30px;
-    border-left-color: #161626;
+    border-left-width: 90px;
+    border-left-color: whitesmoke;
     border-bottom-style: solid;
     border-bottom-width: 30px;
-    border-bottom-color: #161626;
+    border-bottom-color: whitesmoke;
     width: 100%;
     height: auto;
-    background-color: #161626;
+    background-color: whitesmoke;
     text-align: left;
-    color: #f2f2f4;
+    color: black;
 }
 
 #aboutTheDatabase >>> a:link,a:hover,a:visited,a:active {

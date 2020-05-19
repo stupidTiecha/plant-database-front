@@ -1,5 +1,5 @@
 <template>
-    <div id = 'contactUs'><br>
+    <div id = 'formatAndTips'><br>
         <h4>
             Format and useful tips</h4>
         <ul>
@@ -250,7 +250,10 @@
         </table>
         <p class="text">
             <a class="smaller" href="#top"></a>
-        </p></div>
+        </p>
+        <br/>
+        <br/>
+    </div>
 </template>
 
 <script>
@@ -260,20 +263,23 @@
 </script>
 
 <style scoped>
-#contactUs {
+#formatAndTips {
     border-right-style: solid;
     border-right-width: 90px;
-    border-right-color: #161626;
+    border-right-color: whitesmoke;
     border-left-style: solid;
-    border-left-width: 30px;
-    border-left-color: #161626;
+    border-left-width: 90px;
+    border-left-color: whitesmoke;
+    border-bottom-style: solid;
+    border-bottom-width: 30px;
+    border-bottom-color: whitesmoke;
     width: 100%;
     height: auto;
-    background-color: #161626;
+    background-color: whitesmoke;
     text-align: left;
-    color: #f2f2f4;
+    color: black;
 }
-#contactUs >>> a:link,a:hover,a:visited,a:active {
+#formatAndTips >>> a:link,a:hover,a:visited,a:active {
     color: #1ebad6;
 }
 #contactUs >>> a:hover {
