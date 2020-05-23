@@ -229,7 +229,7 @@
                 </td>
                 <td width="88%">
                     <p class="text">
-                        Using a space is the same as<strong> AND</strong>
+                        Using a space is the same as<strong> OR</strong>
                     </p>
                 </td>
             </tr>

@@ -30,7 +30,7 @@
                 </a>
             </div>
         </div>
-        <div style="position: fixed; right: 5px ; top: 140px; z-index: 999">
+        <div id="floatBar">
             <a href ="#" v-on:click ="login" style=" line-height: 25px;">{{user.userName === '' ? 'Login' : 'Hello ' + user.userName}}</a>
             <span> | </span>
             <a href="#"
@@ -103,6 +103,7 @@
             goOut : function (url) {
                 if (url.toString().indexOf('http') === -1 ) {
                     this.$parent.$refs.content.$refs.detail.currentComponent = url;
+                    this.$parent.$refs.content.resize();
                 } else if (url !== '' && url !== undefined) {
                     window.open(url) ;
                 }
@@ -211,5 +212,8 @@
 #bottomBar >>> a:hover {
     text-decoration: none;
 }
-
+/*---------------------------------------------*/
+#floatBar {
+    position: fixed; right: 5px ; top: 140px; z-index: 999
+}
 </style>

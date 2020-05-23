@@ -2,7 +2,7 @@
 module.exports = {
     // 部署应用时的基本 URL
     // publicPath: process.env.NODE_ENV === 'production' ? '/dist/' : '/dist/',
-    publicPath: process.env.NODE_ENV ='/plant-database',
+    publicPath: '/plant-database',
     // build时构建文件的目录 构建时传入 --no-clean 可关闭该行为
     outputDir: 'dist',
     // build时放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录
@@ -62,12 +62,12 @@ module.exports = {
     // },
     // 所有 webpack-dev-server 的选项都支持
     devServer: {
-        // open: false,
+        // open: true,
         // port: 8080,
-        // // 跨域
+        // 跨域
         // proxy: {
-        //     '/api/': {
-        //         target: 'http://192.168.0.11/',
+        //     '/plant-data': {
+        //         target: 'http://127.0.0.1:8080/plant-data',
         //         changeOrigin: true
         //     }
         // }

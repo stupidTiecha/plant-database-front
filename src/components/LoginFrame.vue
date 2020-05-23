@@ -39,7 +39,7 @@
                 <label style="text-align: left; font-weight: bold">User Name:</label>
                 <b-form-input
                         id="input-username"
-                        v-model="registerData.username"
+                        v-model="registerData.userName"
                         :state="nameState"
                         aria-describedby="input-username-help"
                         placeholder="Enter your Username"
@@ -104,6 +104,8 @@
 </template>
 
 <script>
+    import Config from "../assets/js/Config";
+
     export default {
         name: "LoginFrame",
         data() {
@@ -118,7 +120,7 @@
                     password: true,
                 },
                 registerData : {
-                    username : '',
+                    userName : '',
                     password : '',
                     confirmPassword : '',
                 },
@@ -147,12 +149,35 @@
                     return;
                 }
                 //后台请求登录，等后台文档确定再写
-                console.log(JSON.stringify(loginData));
+                this.$http
+                    .get(Config.baseUrl() + 'plant-data/user/login?userName=' + loginData.name + '&password=' + loginData.password)
+                    .then(response => {
+                        let userInfo = response.data.detail;
+                        if (null === userInfo) {
+                            alert('Unknown user or wrong password');
+                        } else {
+                            this.$parent.$refs.top.user.userName = userInfo.userName;
+                            this.loginFrame = 'none';
+                        }
+                    })
             },
             register : function (evt) {
                 evt.preventDefault();
                 //后台请求注册，等后台文档确定再写
-                console.log(JSON.stringify(this.registerData));
+                this.$http
+                    .post(Config.baseUrl() + 'plant-data/user/register',this.registerData)
+                    .then(response => {
+                        let userInfo = response.data.detail;
+                        if (null === userInfo) {
+                            alert('user already existed');
+                        } else {
+                            this.$parent.$refs.top.user.userName = userInfo.userName;
+                            this.loginFrame = 'none';
+                        }
+                    }, response => {
+                        //请求失败
+                        console.log(response);
+                    })
             }
             ,
             toLoginFrame :function () {
@@ -179,7 +204,7 @@
             usernameValidate : function () {
                 let pattern;
                 pattern =/^[a-zA-z\d]{4,12}$/;
-                let state = pattern.test(this.registerData.username);
+                let state = pattern.test(this.registerData.userName);
                 if (state) {
                     let registerState = this.registerState;
                     registerState.username = state;
@@ -208,7 +233,7 @@
         },
         computed : {
             nameState : function () {
-                if (this.registerData.username === '') {
+                if (this.registerData.userName === '') {
                     return ;
                 }
                 return this.usernameValidate();

@@ -26,25 +26,25 @@
             resize : function () {
                 this.sleep(50).then(() => {
                     let detail = this.$refs.detail.$refs.childWindow.$el;
-                    // let leftBanner = this.$refs.leftBanner.$el.firstChild;
-                    // let contactUs = this.$refs.leftBanner.$el.lastChild;
+                    let searchForm = detail.firstElementChild;
                     let detailHeight = detail.clientHeight;
                     let el = this.$el;
-                    // let leftBannerTop = (window.innerHeight - 140 ) / 2 - 75;
                     let height = window.innerHeight - 140;
                     let width = window.innerWidth;
-                    // let contactUsHeight = window.innerHeight - 140  <= 500? detailHeight : window.innerHeight - 245;
-                    let autoHeight = height <= 500 ? 500 : height;
-                    let autoWidth = width <= 500 ? 500 : width;
+                    let autoHeight = height <= 550 ? 550 : height;
+                    let autoWidth = width <= 700 ? 700 : width;
                     // console.log(detailHeight,autoHeight);
                     if (detailHeight >= autoHeight) {
                         autoHeight = detailHeight ;
                     }
+                    if (searchForm !== null && searchForm.clientHeight !== 0) {
+                        let clientHeight = searchForm.clientHeight;
+                        autoHeight = clientHeight + 100 ;
+                        // console.log(clientHeight,autoHeight,detailHeight);
+                    }
                     el.setAttribute('style','height : ' + autoHeight + 'px');
                     el.lastElementChild.setAttribute('style', 'width : ' + autoWidth + 'px');
                     detail.setAttribute('style', 'width : ' + autoWidth + 'px');
-                    // leftBanner.setAttribute('style','top : ' + leftBannerTop + 'px');
-                    // contactUs.setAttribute('style','top : ' + contactUsHeight + 'px');
                 })
 
             },
@@ -63,7 +63,12 @@
             window.onresize = () => {
                 that.resize();
             };
-
+            window.onscroll = () => {
+                let scroll = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+                let temp = this.$parent.$refs.top.$el.lastChild;
+                let top = 140 - scroll >= 0 ? 140 -scroll : 0;
+                temp.setAttribute("style","top : " + top + 'px');
+            }
         },
     }
 </script>
@@ -81,7 +86,7 @@
 #detailWindow{
     height: 100%;
     /*left: 200px;*/
-    background-color: whitesmoke;
+    background-color: white;
     position: relative ;
     text-align: center;
 }
