@@ -148,7 +148,7 @@
                     alert('Please enter account and password');
                     return;
                 }
-                //login
+                //log in
                 this.$http
                     .get(Config.baseUrl() + 'plant-data/user/login?userName=' + loginData.name + '&password=' + loginData.password)
                     .then(response => {
