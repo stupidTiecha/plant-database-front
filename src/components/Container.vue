@@ -21,8 +21,8 @@
             }
         },
         methods : {
-            //自动调整窗口元素大小（左侧栏和右侧详情）
-            // 等待50毫秒是因为点击左侧栏后，执行过快，无法获取到正确的size
+            // Automatically adjust the size of the window elements (left side bar and right side details)
+            // Wait for 50 milliseconds because after clicking the left column, the execution is too fast and the correct size cannot be obtained
             resize : function () {
                 this.sleep(50).then(() => {
                     let detail = this.$refs.detail.$refs.childWindow.$el;
@@ -48,7 +48,7 @@
                 })
 
             },
-            //等待x ms 后执行操作
+            //Perform operation after waiting for x ms
             sleep : function (ms) {
                 return new Promise(resolve =>
                     setTimeout(resolve, ms));
@@ -57,12 +57,13 @@
         ,
         mounted() {
             let that = this;
-            //因为放大按钮执行时无法正确获取height，每秒执行一次resize
+            //Because the height cannot be obtained correctly when the zoom button is executed, resize is performed once per second
             window.setInterval(this.resize,1000);
-            //窗口size发生变化时，自动调整
+            //Automatically adjust when the window size changes
             window.onresize = () => {
                 that.resize();
             };
+            //When the window scrolls, adjust the login position in the upper right corner
             window.onscroll = () => {
                 let scroll = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
                 let temp = this.$parent.$refs.top.$el.lastChild;

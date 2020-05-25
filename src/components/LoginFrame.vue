@@ -148,7 +148,7 @@
                     alert('Please enter account and password');
                     return;
                 }
-                //后台请求登录，等后台文档确定再写
+                //login
                 this.$http
                     .get(Config.baseUrl() + 'plant-data/user/login?userName=' + loginData.name + '&password=' + loginData.password)
                     .then(response => {
@@ -163,7 +163,7 @@
             },
             register : function (evt) {
                 evt.preventDefault();
-                //后台请求注册，等后台文档确定再写
+                //register
                 this.$http
                     .post(Config.baseUrl() + 'plant-data/user/register',this.registerData)
                     .then(response => {
@@ -175,7 +175,6 @@
                             this.loginFrame = 'none';
                         }
                     }, response => {
-                        //请求失败
                         console.log(response);
                     })
             }

@@ -281,7 +281,7 @@
             onSubmit : function (evt) {
                 evt.preventDefault();
 
-                //将提交表单数据复制一份用以精简，不然会影响页面数据
+                //Make a copy of the submitted form data for streamlining, otherwise it will affect the page data
                 // console.log(JSON.stringify(this.searchForm));
                 let submitForm = JSON.parse(JSON.stringify(this.searchForm));
                 if (submitForm.searchType === '0') {
@@ -315,16 +315,16 @@
                     let detail = response.data.detail;
                     this.showContent.noDetail = (detail === null);
                     this.detail = detail;
-                    //隐藏和显示表单
+                    //Hide and show forms
                     this.backStep(3);
                 },response => {
-                    //请求失败
+                    //failed
                     console.log(response);
                 })
                 // console.log(str);
             },
             backStep : function (num) {
-                //隐藏搜索表单
+                //Hide and show search form
                 this.showContent.from = (1 === num);
                 this.showContent.result = (2 === num);
                 this.showContent.detail = (3 === num);
@@ -343,23 +343,23 @@
                 // console.log(page);
             },
             searchPost : function (submitForm) {
-                // 提交数据到后台
+                // Submit data to the backend
                 this.$http.post(Config.baseUrl() + 'plant-data/api/search',submitForm).then(response => {
-                    //查询结果获取
+                    //Get query results
                     let result = response.data.detail.result;
                     let records = response.data.detail.totalRecords;
                     let pageNum = response.data.detail.page;
                     // console.log(records);
-                    //隐藏和显示表单
+                    //Hide and show forms
                     this.backStep(2);
-                    //赋值绑定
+                    //Assignment binding
                     this.result.totalRecords = records;
                     this.result.page = pageNum;
                     this.result.resultList = result;
                     this.showContent.noResult = (result.length === 0);
                     // console.log(result);
                 },response => {
-                    //后台响应失败
+                    //failed
                     console.log(response);
                 })
             },
@@ -468,7 +468,7 @@
         },
         updated() {
             if (this.showContent.detail) {
-                //设置高亮和链接
+                //Set keyword highlighting and links
                 this.setLink();
             }
         }

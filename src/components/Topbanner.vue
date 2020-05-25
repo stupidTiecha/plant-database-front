@@ -54,13 +54,13 @@
                 bottomBar : 'bottomBar',
                 logoPic : 'logoPic',
                 logoDescription : 'logoDescription',
-                //这里是logo图片路径
+                //Here is the logo image path
                 logoPath : require('../../public/logo-1.png'),
-                //这里是logo下的介绍
+                //Here is the introduction under the logo
                 description : 'Māori Plant Use',
-                //这里是头部浮动的图片地址，可以添加多个
+                //Here is the picture address of the floating head, you can add multiple
                 floatPics : [require('../../public/plant001.jpg'),require('../../public/plant002.jpg'),require('../../public/plant003.jpg')],
-                //这里横条选择,添加时按照格式即可
+                //Here the horizontal bar is selected, according to the format when adding
                 selectBars : {
 
                     Home : {
@@ -73,7 +73,7 @@
                     }
                     ,
                     Database : {
-                        //外部链接地址
+                        //External link address
                         href : 'http://www.landcareresearch.co.nz/databases/index.asp',
                         value : "Database"
                     },

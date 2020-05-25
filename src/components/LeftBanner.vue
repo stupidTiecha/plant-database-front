@@ -21,7 +21,8 @@
                 return {
                 leftBar : 'leftBar',
                 menuList : 'menuList',
-                //左侧菜单选项，添加只需要按格式写好，path指点击后切换的组件(需要写好对应的组件)，icon用的是bootstrapVue的
+                //The left menu option, add only need to write according to the format, path refers to the component that is
+                // switched after clicking (need to write the corresponding component), the icon uses bootstrapVue
                 menus : {
                     home : {
                         description : 'Home',
@@ -47,7 +48,7 @@
                         description : 'Contact Us',
                         path : 'homePage',
                         icon : 'people-fill',
-                        //ContactUs 的外部链接
+                        //ContactUs external links
                         url : 'http://www.landcareresearch.co.nz/about/contact/enquiry_form.asp?recipient_name=Maori%20Plant%20Use&recipient_imera=NgaTipuWhakaoranga',
                     },
 
